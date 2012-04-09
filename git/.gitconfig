@@ -1,13 +1,20 @@
-[core]
-	excludesfile = /home/jsoares/.gitignore_global
+[user]
+	name = 
+	email = 
+[github]
+	user = 
+	token = 
+	password = 
 [color]
-    ui = auto
+	ui = auto
 [alias]
 	st = status -s
 	ci = commit
-	br = branch
 	co = checkout
-	df = diff
-	lg = log -p
-	ft = fetch -v
+	br = branch
+	lol = log --graph --decorate --oneline
+	lola = log --all --graph --decorate --oneline
 	logd = log --oneline --graph --decorate --all
+
+[push]
+	default = current

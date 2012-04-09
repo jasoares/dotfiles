@@ -78,22 +78,15 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias dev!='cd ~/Dropbox/dev'
-alias dld!='cd ~/Downloads'
-alias dbx!='cd ~/Dropbox'
-alias pic!='cd ~/Pictures'
-alias adda!='nano +81 ~/.bashrc; source ~/.bashrc'
-alias 'treeg'='tree -a -I .git'
 alias ll='ls -lhG'
 alias lh='ls -lAhG'
 alias la='ls -A'
 alias l='ls -CF'
 alias nano='nano -cT 4'
-alias irbs='irb --simple-prompt'
 alias uu='sudo apt-get update && sudo apt-get upgrade'
+alias dud='du -h --max-depth=1'
 alias git=hub
-alias 'rspecl'='rspec spec -f html -o ~/www/logs/$(basename +"$(pwd)")/rspec_$(date +"%y%m%d%H%M%S").html'
-alias 'cucumberl'='cucumber features -f html -o ~/www/logs/$(basename +"$(pwd)")/cucumber_$(date +"%y%m%d%H%M%S").html'
+alias irbs='irb --simple-prompt'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -108,6 +101,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,6 +112,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[[ -s "/home/jsoares/.rvm/scripts/rvm" ]] && source "/home/jsoares/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-PATH=$PATH:$HOME/bin:$HOME/dev/android-sdk-linux/platform-tools
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
