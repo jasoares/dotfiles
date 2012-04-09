@@ -1,3 +1,10 @@
+[user]
+	name = 
+  email = 
+[github]
+	user = 
+  token = 
+  password = 
 [core]
 	excludesfile = /home/jsoares/.gitignore_global
 [color]
@@ -10,4 +17,9 @@
 	df = diff
 	lg = log -p
 	ft = fetch -v
+	lol = log --graph --decorate --oneline
+  lola = log --all --graph --decorate --oneline
 	logd = log --oneline --graph --decorate --all
+[push]
+  default = current
+  

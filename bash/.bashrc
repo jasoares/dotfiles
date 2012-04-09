@@ -82,13 +82,14 @@ alias dev!='cd ~/Dropbox/dev'
 alias dld!='cd ~/Downloads'
 alias dbx!='cd ~/Dropbox'
 alias pic!='cd ~/Pictures'
-alias adda!='nano +81 ~/.bashrc; source ~/.bashrc'
+alias adda!='nano +81 ~/.bashrc && source ~/.bashrc'
 alias 'treeg'='tree -a -I .git'
 alias ll='ls -lhG'
 alias lh='ls -lAhG'
 alias la='ls -A'
 alias l='ls -CF'
 alias nano='nano -cT 4'
+alias dud='du -h --max-depth=1'
 alias irbs='irb --simple-prompt'
 alias uu='sudo apt-get update && sudo apt-get upgrade'
 alias git=hub
@@ -108,6 +109,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/dev/android-sdk-linux/" ]; then
+    PATH="$PATH:$HOME/dev/android-sdk-linux/platform-tools"
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,6 +124,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[[ -s "/home/jsoares/.rvm/scripts/rvm" ]] && source "/home/jsoares/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-PATH=$PATH:$HOME/bin:$HOME/dev/android-sdk-linux/platform-tools
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a funct
