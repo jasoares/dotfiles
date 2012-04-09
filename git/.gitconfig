@@ -1,0 +1,13 @@
+[core]
+	excludesfile = /home/jsoares/.gitignore_global
+[color]
+    ui = auto
+[alias]
+	st = status -s
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	ft = fetch -v
+	logd = log --oneline --graph --decorate --all
