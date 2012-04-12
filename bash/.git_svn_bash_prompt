@@ -81,7 +81,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="${state}(${branch})${remote}${COLOR_NONE} "
+  BRANCH="${state}[${branch}]${remote}${COLOR_NONE}"
 }
 
 # Determine the branch information for this subversion repository. No support
@@ -129,7 +129,7 @@ function set_bash_prompt () {
   fi
   
   # Set the bash prompt variable.
-  PS1="\u@\h \w ${BRANCH}${PROMPT_SYMBOL} "
+  PS1="\u@\h:\w${BRANCH}${PROMPT_SYMBOL} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.

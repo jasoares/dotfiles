@@ -49,25 +49,10 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-bg_job_count () {
-  local JOBS=jobs | cut -c 2-2
-	if [ JOBS == "0" ]; then
-		echo ""
-	else
-		echo "$JOBS:"
-	fi
-}
-
-parse_git_branch () {
-  git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)#{\1}#'
-}
-
 if [ "$color_prompt" = yes ]; then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[31m\]$(bg_job_count)\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;33m\]$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-		PS1='${debian_chroot:+($debian_chroot)}$(bg_job_count)\u@\h:\w$(parse_git_branch)\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -146,5 +131,3 @@ fi
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 . ~/.git_svn_bash_prompt
-
-
