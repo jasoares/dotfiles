@@ -78,12 +78,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias dev!='cd ~/Dropbox/dev'
+alias dev!='cd ~/dev'
 alias dld!='cd ~/Downloads'
 alias dbx!='cd ~/Dropbox'
 alias pic!='cd ~/Pictures'
 alias adda!='nanop +81 ~/.bashrc && source ~/.bashrc'
-alias 'treeg'='tree -a -I .git'
+alias ngtree='tree -AaI .git'
+alias rtree='ngtree -I "spec|features|doc|tmp|vendor|test|log|.*"'
 alias ll='ls -lhG'
 alias lh='ls -lAhG'
 alias la='ls -A'
@@ -96,8 +97,8 @@ alias irbs='irb --simple-prompt'
 alias uu='sudo apt-get update && sudo apt-get upgrade'
 alias git=hub
 alias go=google-chrome
-alias 'rspecl'='rspec spec -f html -o ~/www/logs/$(basename +"$(pwd)")/rspec_$(date +"%y%m%d%H%M%S").html'
-alias 'cucumberl'='cucumber features -f html -o ~/www/logs/$(basename +"$(pwd)")/cucumber_$(date +"%y%m%d%H%M%S").html'
+alias rspecl='rspec spec -f html -o ~/www/logs/$(basename +"$(pwd)")/rspec_$(date +"%y%m%d%H%M%S").html'
+alias cucumberl='cucumber features -f html -o ~/www/logs/$(basename +"$(pwd)")/cucumber_$(date +"%y%m%d%H%M%S").html'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
