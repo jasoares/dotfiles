@@ -97,7 +97,7 @@ alias dev!='cd ~/dev'
 alias dld!='cd ~/Downloads'
 alias dbx!='cd ~/Dropbox'
 alias pic!='cd ~/Pictures'
-alias adda!='nanop +81 ~/.bashrc && source ~/.bashrc'
+alias adda!='nanop +53 ~/.bashrc && source ~/.bashrc'
 alias ngtree='tree -AaI .git'
 alias rtree='ngtree -I "spec|features|doc|tmp|vendor|test|log|.*"'
 alias ll='ls -lhG'
@@ -144,5 +144,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+. ~/.git_svn_bash_prompt
 
 
