@@ -6,7 +6,7 @@
   	token =
   	password =
 [core]
-	excludesfile = /home/jsoares/.gitignore_global
+	excludesfile = /home/jsoares/.gitignore
 [color]
 	ui = auto
 [alias]
