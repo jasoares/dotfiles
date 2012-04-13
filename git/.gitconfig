@@ -1,10 +1,10 @@
 [user]
-	name = 
-  email = 
+	name =
+  	email =
 [github]
-	user = 
-  token = 
-  password = 
+	user =
+  	token =
+  	password =
 [core]
 	excludesfile = /home/jsoares/.gitignore_global
 [color]
@@ -13,12 +13,15 @@
 	st = status -s
 	ci = commit
 	co = checkout
-  br = branch
+  	br = branch
 	df = diff
 	lg = log -p
 	ft = fetch -v
+  fta = fetch --all -v
 	lol = log --graph --decorate --oneline
-  lola = log --all --graph --decorate --oneline
+  	lola = log --all --graph --decorate --oneline
 	logd = log --oneline --graph --decorate --all
+  logo = log --oneline --decorate
+	loga = log --oneline --decorate --all
 [push]
-  default = current
+  	default = current
