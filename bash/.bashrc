@@ -99,6 +99,7 @@ alias uu!='sudo apt-get update && sudo apt-get upgrade'
 alias git=hub
 alias rmv=rvm
 alias rvmrc='rvm --rvmrc --create'
+alias rvmc='rvm current'
 alias go=google-chrome
 alias rspecl='rspec spec -f html -o ~/www/logs/$(basename +"$(pwd)")/rspec_$(date +"%y%m%d%H%M%S").html'
 alias cucumberl='cucumber features -f html -o ~/www/logs/$(basename +"$(pwd)")/cucumber_$(date +"%y%m%d%H%M%S").html'
@@ -132,5 +133,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+# added rake_completion from ryanb/dotfiles
+complete -C ~/bin/rake_completion -o default rake
 
 . ~/.git_svn_bash_prompt
