@@ -78,10 +78,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias dev!='cd ~/dev'
-alias dld!='cd ~/Downloads'
-alias dbx!='cd ~/Dropbox'
-alias pic!='cd ~/Pictures'
+alias cdw='cd ~/work'
+alias cdwr='cd ~/work/rails'
+alias cdd='cd ~/Downloads'
+alias cdb='cd ~/Dropbox'
+alias cdp='cd ~/Pictures'
 alias adda!='nanop +81 ~/.bashrc && source ~/.bashrc'
 alias ngtree='tree -AaI .git'
 alias rtree='ngtree -I "spec|features|doc|tmp|vendor|test|log|.*"'
@@ -94,7 +95,7 @@ alias nanor='nano -Y ruby'
 alias nanop='nano -Y python'
 alias dud='du -h --max-depth=1'
 alias irbs='irb --simple-prompt'
-alias uu='sudo apt-get update && sudo apt-get upgrade'
+alias uu!='sudo apt-get update && sudo apt-get upgrade'
 alias git=hub
 alias rmv=rvm
 alias rvmrc='rvm --rvmrc --create'
