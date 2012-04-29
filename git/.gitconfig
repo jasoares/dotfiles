@@ -1,10 +1,10 @@
 [user]
-  name =
-  email =
+  name = João Soares
+  email = jsoaresgeral@gmail.com
 [github]
-  user =
-  token =
-  password =
+  user = 
+  token = 
+  password = 
 [core]
   excludesfile = /home/jsoares/.gitignore
 [color]
@@ -19,9 +19,16 @@
   ft = fetch -v
   fta = fetch --all -v
   lol = log --graph --decorate --oneline
-  lola = log --all --graph --decorate --oneline
-  logd = log --oneline --graph --decorate --all
-  logo = log --oneline --decorate
-  loga = log --oneline --decorate --all
+  lols = log --graph --decorate --oneline --stat
+  lola = log --graph --decorate --oneline --all
+  lolas = log --graph --decorate --oneline --all --stat
+  logd = log --oneline --graph --decorate
+  logda = log --oneline --graph --decorate --all
+  logds = log --oneline --graph --decorate --stat
+  logdas = log --oneline --graph --decorate --all --stat
+  lodo = log --oneline --decorate
+  lodos = log --oneline --decorate --stat
+  loda = log --oneline --decorate --all
+  lodas = log --oneline --decorate --all --stat
 [push]
-  default = current
+  	default = current
