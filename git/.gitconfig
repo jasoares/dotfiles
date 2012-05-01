@@ -1,12 +1,13 @@
 [user]
-  name = João Soares
-  email = jsoaresgeral@gmail.com
+  name =
+  email =
+  signingkey =
 [github]
-  user = 
-  token = 
-  password = 
+  user =
+  token =
+  password =
 [core]
-  excludesfile = /home/jsoares/.gitignore
+  excludesfile = /home/jsoares/.gitignore_global
 [color]
   ui = auto
 [alias]
@@ -17,18 +18,41 @@
   df = diff
   lg = log -p
   ft = fetch -v
+  sub = reset HEAD --
   fta = fetch --all -v
   lol = log --graph --decorate --oneline
   lols = log --graph --decorate --oneline --stat
   lola = log --graph --decorate --oneline --all
   lolas = log --graph --decorate --oneline --all --stat
-  logd = log --oneline --graph --decorate
-  logda = log --oneline --graph --decorate --all
-  logds = log --oneline --graph --decorate --stat
-  logdas = log --oneline --graph --decorate --all --stat
-  lodo = log --oneline --decorate
-  lodos = log --oneline --decorate --stat
-  loda = log --oneline --decorate --all
-  lodas = log --oneline --decorate --all --stat
+
 [push]
-  	default = current
+  default = current
+
+[diff]
+  tool = diffmerge
+
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+	tool = diffmerge
+
+[mergetool "diffmerge"]
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  trustExitCode = true
+
+[imap]
+  folder = "[Gmail]/Drafts"
+  host = imap://imap.gmail.com
+  user =
+  pass =
+  port = 993
+  sslverify = false
+
+[sendemail]
+  smtpencryption = tls
+  smtpserver = smtp.gmail.com
+  smtpuser =
+	smtppass =
+  smtpserverport = 587
+  chainreplyto = false
