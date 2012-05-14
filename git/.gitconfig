@@ -12,18 +12,24 @@
   ui = auto
 [alias]
   st = status -s
-  ci = commit
+  ci = commit -s
   co = checkout
   br = branch
   df = diff
-  lg = log -p
+  dfp = diff -p
+  dfs = diff --stat
+  dfps = diff -p --stat
   ft = fetch -v
   sub = reset HEAD --
   fta = fetch --all -v
-  lol = log --graph --decorate --oneline
-  lols = log --graph --decorate --oneline --stat
-  lola = log --graph --decorate --oneline --all
-  lolas = log --graph --decorate --oneline --all --stat
+  l = log --graph --decorate --oneline --all
+  lp = log --graph --decorate -p
+  lop = log --graph --decorate --oneline -p
+  ls = log --graph --decorate --oneline --all --stat
+  lsp = log --graph --decorate --all --stat -p
+  lo = log --graph --decorate --oneline
+  ld = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %C(yellow)%an, %C(cyan)%ar%Creset'
+	stash-unapply = !git stash show -p | git apply -R
 
 [push]
   default = current
@@ -56,3 +62,5 @@
 	smtppass =
   smtpserverport = 587
   chainreplyto = false
+[format]
+	signoff = true
